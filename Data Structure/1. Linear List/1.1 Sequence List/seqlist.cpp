@@ -21,7 +21,7 @@ template<class Type> int SeqList<Type>::replaceElem(int i, Type &e) {
 }
 
 template<class Type> int SeqList<Type>::insertElem(int i, Type &e) {
-	if (i < 0 || i >= length) return 0;
+	if (i < 0 || i > length) return 0;
 	if (listsize == length) //add more storage space
 	{
 		Type *p = new Type[listsize++];
@@ -40,7 +40,7 @@ template<class Type> int SeqList<Type>::insertElem(int i, Type &e) {
 }
 
 template<class Type> int SeqList<Type>::deleteElem(int i, Type &e) {
-	if (i < 0 || i >= length) return 0;
+	if (i < 0 || i > length - 1) return 0;
 	e = elem[i];
 	for (int j = i; j < length - 1; j++) //forwards elems
 		elem[j] = elem[j + 1];
