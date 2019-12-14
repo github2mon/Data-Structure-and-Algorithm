@@ -1,4 +1,4 @@
-#include "SeqList.h"
+#include "seqlist.h"
 
 template<class Type> SeqList<Type>::SeqList(int size) {
 	elem = new Type[size];
