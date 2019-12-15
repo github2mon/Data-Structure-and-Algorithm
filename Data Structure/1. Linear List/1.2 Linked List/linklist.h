@@ -10,7 +10,7 @@ private:
 	ListNode<T> *next;
 public:
 	ListNode() : next(NULL) {};
-	ListNOde(T &e) : data(e), next(NULL) {};
+	ListNode(T &e) : data(e), next(NULL) {};
 	T& getNodeData() {return data;}
 	ListNode<T>* getNodePtr() {return next;}
 	void setNodeData(T& e) {data = e;}
