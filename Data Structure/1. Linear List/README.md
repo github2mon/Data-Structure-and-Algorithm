@@ -17,7 +17,7 @@ ADT List{
 	//insert e after ith elem
 	insertAfter(&L, i, e);
 	//get the value of ith elem, then delete it
-	delete(&L, i, &e);
+	deleteElem(&L, i, &e);
 	//get the prior elem of ith
 	prior(L, i);
 	//get the next elem of ith
