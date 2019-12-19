@@ -14,7 +14,7 @@ public:
 
 	int isEmpty(void) const { return length == 0; }
 	int getLength(void) const { return length; }
-	Type& getElem(int i) const { return elem[i - 1] };
+	Type& getElem(int i) const { return elem[i]; }
 	int replaceElem(int i, Type &e);
 	int locateElem(Type e);
 	int insertElem(int i, Type &e);
