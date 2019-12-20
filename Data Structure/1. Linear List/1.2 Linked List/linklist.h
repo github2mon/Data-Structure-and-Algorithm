@@ -9,6 +9,7 @@ template <typename T> class ListNode
 	friend class LinkList<T>;
 private:
 	T data;
+	//ListNode<T> *prior; dual linked list
 	ListNode<T> *next;
 public:
 	ListNode() : next(NULL) {};
@@ -24,7 +25,7 @@ template <typename T> class LinkList
 private:
 	ListNode<T>* head;
 public:
-	LinkList() { head = new ListNode<T>(); }
+	LinkList() { head = new ListNode<T>(); /*head->next = head; circle list*/}
 	LinkList(LinkList<T>& List);
 	~LinkList() { clearList(); delete head; }
 	void clearList();
