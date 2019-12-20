@@ -22,3 +22,20 @@ private:
  ```cpp
  head->next = head;
  ```
+
+Static Linked List
+---
+```cpp
+template <typename T> class ListNode
+{
+private:
+	T data;
+	int next;
+}
+
+template <typename T> class SList
+{
+private:
+	int head;
+}
+```
