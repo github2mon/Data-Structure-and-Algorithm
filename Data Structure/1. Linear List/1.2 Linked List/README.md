@@ -1,3 +1,9 @@
+List without Head
+---
+```cpp
+ListNode<T>** p = &head;
+```
+
 Dual Linked List
 ---
 ```cpp
@@ -14,5 +20,5 @@ private:
  Circle Linked List
  ---
  ```cpp
-     head->next = head;
+ head->next = head;
  ```
