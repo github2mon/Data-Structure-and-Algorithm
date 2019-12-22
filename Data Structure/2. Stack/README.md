@@ -2,6 +2,7 @@
 ADT Stack
 {
 	init(&S);
+	destory(&S);
 	isEmpty(S);
 	isFull(S);
 	clear(&S);
