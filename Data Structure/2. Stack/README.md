@@ -12,3 +12,4 @@ ADT Stack
 	pop(&S);
 } ADT Stack
 ```
+`always used in Infix expressions and postfix expressions`
