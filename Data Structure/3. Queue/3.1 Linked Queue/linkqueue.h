@@ -76,7 +76,7 @@ template <typename T> T& LinkQueue<T>::deQueue()
 	front = front->next;
 	if (tail == p) tail = front;
 	T* q = new T;
-	q = p->data;
+	*q = p->data;
 	delete p;
 	return *q;
 }
