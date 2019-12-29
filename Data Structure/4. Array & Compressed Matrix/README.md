@@ -66,3 +66,13 @@
 >(row, col, val)
 >((0,0,1), (0,1,2), (1,0,3), (2,2,4))
 >```
+```cpp
+ADT SparseMatrix
+{
+	createSM(&M);
+	destorySM(&M);
+	transposeSM(M);
+	addSM(&M, &N);
+	mulSM(&M, &N);
+}ADT SparseMatrix
+```
