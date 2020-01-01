@@ -4,6 +4,8 @@
 ---
 查询TARGET第一次在SOURCE中出现的位置
 ---
+Example: [028_implement-strstr](https://github.com/github2mon/Leetcode-note-cpp/blob/master/028_implement-strstr.cpp)
+---
 ![](https://github.com/github2mon/Data-Structure-and-Algorithm/blob/master/Algorithm/KMP/string%20matching.jpg)  
   
 Violent Matching
