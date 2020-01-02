@@ -67,7 +67,7 @@ int k = -1, len = strlen(p);
 for (int i = 1; i < len; i++)
 {
 	while (k >= 0 && p[k + 1] != p[i]) 
-		k = next[k]; //递归下一项为当前最长前缀的最长前缀，即最长后缀
+		k = next[k]; //递归下一项为当前最长前缀的最长后缀
 	if (p[k + 1] == p[i])
 		k++;
 	next[i] = k;
