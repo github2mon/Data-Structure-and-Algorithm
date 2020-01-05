@@ -27,3 +27,6 @@ for(int i=1; i<len; i++) //Repeat times
 ```
 # 2. Insertion Sort
 ## 2.1 Algorithm Steps
+* Regard the first element as an `ordered array`, and the remaining elements as an `unordered array`.
+* Scan the unordered array, and insert to the ordered array.
+* If the  element to be inserted is equal to one of the element of ordered array, it should be inserted behind.
