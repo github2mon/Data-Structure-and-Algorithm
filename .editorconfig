@@ -4,4 +4,4 @@ root = true
 # all files
 [*]
 indent_style = tab
-tab_size = 4
+tab_width = 4
