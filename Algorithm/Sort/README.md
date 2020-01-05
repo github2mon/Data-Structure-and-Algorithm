@@ -25,3 +25,5 @@ for(int i=1; i<len; i++) //Repeat times
 		break;
 }
 ```
+# 2. Insertion Sort
+## 2.1 Algorithm Steps
