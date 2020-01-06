@@ -30,3 +30,20 @@ for(int i=1; i<len; i++) //Repeat times
 * Regard the first element as an `ordered array`, and the remaining elements as an `unordered array`.
 * Scan the unordered array, and insert to the ordered array.
 * If the  element to be inserted is equal to one of the element of ordered array, it should be inserted behind.
+## 1.2 Source Code
+```cpp
+for(int i=1; i<len; i++) //Regard the first element as an ordered array
+{
+	int tmp = a[i];
+	for(int j=i-1; j>=0; j--) //Scan the unordered array
+	{
+		if(a[j] > tmp)
+			a[j+1] = a[j];
+		else
+		{
+			a[j+1] = tmp; //insert behind the equal one or smaller one
+			break;
+		}
+	}
+}
+```
