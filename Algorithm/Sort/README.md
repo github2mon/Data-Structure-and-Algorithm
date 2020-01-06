@@ -30,7 +30,7 @@ for(int i=1; i<len; i++) //Repeat times
 * Regard the first element as an `ordered array`, and the remaining elements as an `unordered array`.
 * Scan the unordered array, and insert to the ordered array.
 * If the  element to be inserted is equal to one of the element of ordered array, it should be inserted behind.
-## 1.2 Source Code
+## 2.2 Source Code
 ```cpp
 for(int i=1; i<len; i++) //Regard the first element as an ordered array
 {
@@ -47,3 +47,23 @@ for(int i=1; i<len; i++) //Regard the first element as an ordered array
 	}
 }
 ```
+# 3. Selection Sort
+## 3.1 Algorithm Steps
+* Find out the minimum element, and exchange with the first element of the unordered array
+* Find out the minimum element in the remaining elements, and exchange with the first element of the remaining unordered array
+* Repeat the second step until ordered
+## 3.2 Source Code
+```cpp
+for(int i=0; i<len; i++)
+{
+	int min = i;
+	for(int j=i+1; j<len; j++)
+		min = a[j]<a[min] ? j : min; //return the minimum sequence
+	if(i != min)
+	{
+		int tmp = a[i];
+		a[i] = a[min];
+		a[min] = tmp;
+	}
+}
+``` 
