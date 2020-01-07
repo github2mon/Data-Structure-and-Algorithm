@@ -67,3 +67,46 @@ for(int i=0; i<len; i++)
 	}
 }
 ``` 
+# 4. Quick Sort
+## 4.1 Algorithm Steps
+* Choose an element as the pivot
+* Partition operate: put all smaller elements at left, and all biggers right
+* Do not care about the equaled elements
+* Exchange the pivot element with the first of right-array
+* Recursive sort the left and right sub-array until the size of sub-array equals to 1
+## 4.2 Source Code
+```cpp
+void swap(int* a, int* b)
+{
+    *a = *a^*b;
+    *b = *a^*b;
+    *a = *a^*b;
+}
+
+int partition(int a[], int left, int right)
+{
+    int l = left, r = right - 1;
+    while(l <= r)
+    {
+        while(a[l] < a[right])
+            l++;
+        while(a[r] > a[right])
+            r--;
+        if(l < r)
+            swap(a[l++], a[r--]);
+        else
+            r--;
+    }
+    swap(a[right], a[l]);
+    return l;
+}
+
+void quickSort(int a[], int left, int right)
+{
+    if(left > right)
+        return;
+    int index = partition(a, left, right);
+    quickSort(a, left, index-1);
+    quickSort(a, index+1, right);
+}
+```
