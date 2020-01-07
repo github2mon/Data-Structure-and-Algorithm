@@ -10,19 +10,19 @@ int a[] = {1,2,5,4,3};
 int len = sizeof(a)/sizeof(int);
 for(int i=1; i<len; i++) //Repeat times
 {
-	bool ordered = true; //flag
-	for(int j=0; j<len-i; j++)
-	{
-		if(a[j] > a[j+1]) //Compare adjacent elements.
-		{
-			int tmp = a[j];
-			a[j] = a[j+1];
-			a[j+1] = tmp;
-			ordered = false; //if unordered, continue; else break;
-		}
-	}
-	if(ordered)
-		break;
+    bool ordered = true; //flag
+    for(int j=0; j<len-i; j++)
+    {
+        if(a[j] > a[j+1]) //Compare adjacent elements.
+        {
+            int tmp = a[j];
+            a[j] = a[j+1];
+            a[j+1] = tmp;
+            ordered = false; //if unordered, continue; else break;
+        }
+    }
+    if(ordered)
+        break;
 }
 ```
 # 2. Insertion Sort
@@ -34,17 +34,17 @@ for(int i=1; i<len; i++) //Repeat times
 ```cpp
 for(int i=1; i<len; i++) //Regard the first element as an ordered array
 {
-	int tmp = a[i];
-	for(int j=i-1; j>=0; j--) //Scan the unordered array
-	{
-		if(a[j] > tmp)
-			a[j+1] = a[j];
-		else
-		{
-			a[j+1] = tmp; //insert behind the equal one or smaller one
-			break;
-		}
-	}
+    int tmp = a[i];
+    for(int j=i-1; j>=0; j--) //Scan the unordered array
+    {
+        if(a[j] > tmp)
+            a[j+1] = a[j];
+        else
+        {
+            a[j+1] = tmp; //insert behind the equal one or smaller one
+            break;
+        }
+    }
 }
 ```
 # 3. Selection Sort
@@ -56,15 +56,15 @@ for(int i=1; i<len; i++) //Regard the first element as an ordered array
 ```cpp
 for(int i=0; i<len; i++)
 {
-	int min = i;
-	for(int j=i+1; j<len; j++)
-		min = a[j]<a[min] ? j : min; //return the minimum sequence
-	if(i != min)
-	{
-		int tmp = a[i];
-		a[i] = a[min];
-		a[min] = tmp;
-	}
+    int min = i;
+    for(int j=i+1; j<len; j++)
+        min = a[j]<a[min] ? j : min; //return the minimum sequence
+    if(i != min)
+    {
+        int tmp = a[i];
+        a[i] = a[min];
+        a[min] = tmp;
+    }
 }
 ``` 
 # 4. Quick Sort
