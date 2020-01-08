@@ -1,3 +1,11 @@
+```cpp
+void swap(int* a, int* b)
+{
+    *a = *a^*b;
+    *b = *a^*b;
+    *a = *a^*b;
+}
+```
 # 1. Bubble Sort
 ## 1.1 Algorithm Steps
 * Compare adjacent elements. If the first one is bigger, exchange them.
