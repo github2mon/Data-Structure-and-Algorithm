@@ -7,9 +7,10 @@ void swap(int* a, int* b)
 }
 void swap(int* a, int* b)
 {
-	*a = *a + *b; //be care of int + int = long
-	*b = *a - *b;
-	*a = *a - *b;
+    *a = *a + *b; //be care of int + int = long
+    *b = *a - *b;
+    *a = *a - *b;
+}
 ```
 # 1. Bubble Sort
 ## 1.1 Algorithm Steps
@@ -71,7 +72,7 @@ for(int i=0; i<len; i++)
     for(int j=i+1; j<len; j++)
         min = a[j]<a[min] ? j : min; //return the minimum sequence
     if(i != min)
-		swap(a[i], a[min]);
+        swap(a[i], a[min]);
 }
 ``` 
 # 4. Quick Sort
