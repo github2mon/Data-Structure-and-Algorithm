@@ -5,6 +5,11 @@ void swap(int* a, int* b)
     *b = *a^*b;
     *a = *a^*b;
 }
+void swap(int* a, int* b)
+{
+	*a = *a + *b; //be care of int + int = long
+	*b = *a - *b;
+	*a = *a - *b;
 ```
 # 1. Bubble Sort
 ## 1.1 Algorithm Steps
@@ -23,9 +28,7 @@ for(int i=1; i<len; i++) //Repeat times
     {
         if(a[j] > a[j+1]) //Compare adjacent elements.
         {
-            int tmp = a[j];
-            a[j] = a[j+1];
-            a[j+1] = tmp;
+            swap(a[j], a[j+1]);
             ordered = false; //if unordered, continue; else break;
         }
     }
@@ -68,11 +71,7 @@ for(int i=0; i<len; i++)
     for(int j=i+1; j<len; j++)
         min = a[j]<a[min] ? j : min; //return the minimum sequence
     if(i != min)
-    {
-        int tmp = a[i];
-        a[i] = a[min];
-        a[min] = tmp;
-    }
+		swap(a[i], a[min]);
 }
 ``` 
 # 4. Quick Sort
@@ -84,13 +83,6 @@ for(int i=0; i<len; i++)
 * Recursive sort the left and right sub-array until the size of sub-array equals to 1
 ## 4.2 Source Code
 ```cpp
-void swap(int* a, int* b)
-{
-    *a = *a^*b;
-    *b = *a^*b;
-    *a = *a^*b;
-}
-
 int partition(int a[], int left, int right)
 {
     int l = left, r = right - 1;
