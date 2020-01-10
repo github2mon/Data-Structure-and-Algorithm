@@ -1,3 +1,9 @@
+# 0. Prepare
+```cpp
+srand((unsigned int)time(nullptr)); //include <ctime>
+for(int i = 0; i < NUM; i++)
+    array[i] = rand() % 100 + 1; //include <algorithm>
+```
 ```cpp
 void swap(int* a, int* b)
 {
@@ -20,8 +26,6 @@ void swap(int* a, int* b)
 * If the remaining unprocessed elements is ordered, the `flag` would be true, and `break;`
 ## 1.2 Source Code
 ```cpp
-int a[] = {1,2,5,4,3};
-int len = sizeof(a)/sizeof(int);
 for(int i=1; i<len; i++) //Repeat times
 {
     bool ordered = true; //flag
