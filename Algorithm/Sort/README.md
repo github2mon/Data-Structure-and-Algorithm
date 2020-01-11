@@ -115,3 +115,5 @@ void quickSort(int a[], int left, int right)
     quickSort(a, index+1, right);
 }
 ```
+# 5. Merge Sort
+## 5.1 Algorithm Steps
