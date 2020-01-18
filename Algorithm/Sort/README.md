@@ -117,3 +117,39 @@ void quickSort(int a[], int left, int right)
 ```
 # 5. Merge Sort
 ## 5.1 Algorithm Steps
+* devide the unordered array into two sub-array
+* finally each sub-array contains only one element, which must be sorted
+* merge the two ordered array (left-array & right-array)
+## 5.2 Source Code
+```cpp
+void merge(int* a, int l, int m, int r)
+{
+    if (a == nullptr)
+        return;
+    int* temp = new int[r - l + 1];
+    int pl = l, pr = m + 1, p = 0;
+    while (pl <= m && pr <= r)
+        temp[p++] = a[pl] <= a[pr] ? a[pl++] : a[pr++];
+
+    if (pl <= m)
+        memcpy(temp + p, a + pl, sizeof(int) * (m - pl + 1));
+    else if (pr <= r)
+        memcpy(temp + p, a + pr, sizeof(int) * (r - pr + 1));
+
+    memcpy(a + l, temp, sizeof(int) * (r - l + 1));
+
+    delete[] temp;
+    temp = nullptr;
+}
+
+void mergeSort(int* a, int l, int r)
+{
+    if (!a || l >= r)
+        return;
+
+    int m = l + (r - l) / 2;
+    mergeSort(a, l, m);
+    mergeSort(a, m + 1, r);
+    merge(a, l, m, r);
+}
+```
