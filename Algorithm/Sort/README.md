@@ -153,3 +153,6 @@ void mergeSort(int* a, int l, int r)
     merge(a, l, m, r);
 }
 ```
+# 6. Heap Sort
+## 6.1 Algorithm Steps
+## 6.2 Source Code
