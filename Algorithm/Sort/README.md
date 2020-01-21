@@ -17,6 +17,12 @@ void swap(int* a, int* b)
     *b = *a - *b;
     *a = *a - *b;
 }
+void swap(int* a, int i, int j)
+{
+    a[i] = a[i] ^ a[j];
+    a[j] = a[i] ^ a[j];
+    a[i] = a[i] ^ a[j];
+}
 ```
 |Sort Algorithm|Average Time Complexity|The Best Condition|The Worst Condition|Space Complexity|Stability|
 |:-:|:-:|:-:|:-:|:-:|:-:|
