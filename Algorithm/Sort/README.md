@@ -155,4 +155,36 @@ void mergeSort(int* a, int l, int r)
 ```
 # 6. Heap Sort
 ## 6.1 Algorithm Steps
+* Creat the Maxheap, each parent node is larger than the child nodes
+* Exchange the root and the last element
+* re-build the Maxheap for the first `len-1` elements
 ## 6.2 Source Code
+```cpp
+void buildMaxHeap(int* a, int i, int len)
+{
+    int left  = 2 * i + 1;
+    int right = 2 * i + 2;
+    int largest = i;
+    if (left < len && a[left] > a[largest])
+        largest = left;
+    if (right < len && a[right] > a[largest])
+        largest = right;
+    if (largest != i)
+    {
+        swap(a, i, largest);
+        buildMaxHeap(a, largest, len);
+    }
+}
+
+void heapSort(int* a, int len)
+{
+    for (int i = len / 2; i >= 0; i--)
+        buildMaxHeap(a, i, len);
+    while(len - 1)
+    {
+        swap(a, 0, len - 1);
+        buildMaxHeap(a, 0, --len);
+    }
+}
+
+```
