@@ -18,6 +18,14 @@ void swap(int* a, int* b)
     *a = *a - *b;
 }
 ```
+|Sort Algorithm|Average Time Complexity|The Best Condition|The Worst Condition|Space Complexity|Stability|
+|:-:|:-:|:-:|:-:|:-:|:-:|
+|Bubble|O(n^2)|O(n)|O(n^2)|O(1)|Stable|
+|Insertion|O(n^2)|O(n)|O(n^2)|O(1)|Stable|
+|Selection|O(n^2)|O(n^2)|O(n^2)|O(1)|Unstable|
+|Quick|O(nlogn)|O(nlogn)|O(n^2)|O(logn)|Unstable|
+|Merge|O(nlogn)|O(nlogn)|O(nlogn)|O(n)|Stable|
+|Heap|O(nlogn)|O(nlogn)|O(nlogn)|O(1)|Unstable|
 # 1. Bubble Sort
 ## 1.1 Algorithm Steps
 * Compare adjacent elements. If the first one is bigger, exchange them.
@@ -41,6 +49,7 @@ for(int i=1; i<len; i++) //Repeat times
         break;
 }
 ```
+ 
 # 2. Insertion Sort
 ## 2.1 Algorithm Steps
 * Regard the first element as an `ordered array`, and the remaining elements as an `unordered array`.
