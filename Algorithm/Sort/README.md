@@ -186,5 +186,4 @@ void heapSort(int* a, int len)
         buildMaxHeap(a, 0, --len);
     }
 }
-
 ```
