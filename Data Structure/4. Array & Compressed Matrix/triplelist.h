@@ -31,3 +31,26 @@ template<typename T> TripleList<T>::TripleList(int maxSize)
 	array = new Triple<T>[maxSize];
 	rows = cols = terms = 0;
 }
+
+template<typename T> TripleList<T>* TripleList<T>::transpose();
+{
+	TripleList<T>* b = new TripleList<T>(size);
+	b->cols = rows;
+	b->rows = cols;
+	b->terms = terms;
+	if (terms > 0)
+	{
+		int cur = 0;
+		for(int col = 0; col < cols; col++)
+			for(int p = 0; p < terms; p++)
+				if (array[p].col == col)
+				{
+					b->array[cur].row = array[p].col;
+					b->array[cur].col = array[p].row;
+					b->array[cur].value = array[p].value;
+					cur++;
+				}
+	}
+	return b;
+}
+
