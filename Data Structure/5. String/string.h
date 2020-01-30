@@ -17,7 +17,6 @@ public:
 	int comp(String s);
 	String* concat(String& s);
 	String* subString(int pos, int length);
-	int replace(String& s1, String& s2);
 	int insert(int pos, String& s);
 	int delete(int pos, int length);
 };
@@ -84,5 +83,43 @@ String* String::concat(String& s)
 
 String* String::subString(int pos, int length)
 {
+	if (pos<0 || pos>len || length<0 || length>len - pos + 1)
+		return nullptr;
+	String* sub = new String();
+	delete[] sub->str;
+	sub->str = new char[length + 1];
+	sub->len = length;
+	sub->str[length] = '\0';
+	for (int i = 0; i < length; i++)
+		sub->str[i] = str[i + pos];
+	return sub;
+}
 
+int String::insert(int pos, String& s)
+{
+	if (pos < 0 || pos > len)
+		return 0;
+	char* p = new char[len + s.len + 1];
+	if (!p) { cout << "memory overflow"; exit(0); }
+	for (int i = 0; i < len; i++)
+		p[i] = str[i];
+	delete[] str;
+	str = p;
+	p = nullptr;
+	for (int i = pos; i < len - 1; i++)
+		str[i + s.len] = str[i];
+	for (int i = 0; i < s.len; i++)
+		str[pos + i] = s.str[i];
+	len += s.len;
+	str[len] = '\0';
+	return 1;
+}
+
+int String::del(int pos, int length)
+{
+	if (pos < 0 || pos > len - 1 || length < 0 || length > len - pos)
+		return 0;
+	for (int i = pos + length; i <= len; i++)
+		str[i - length] = str[i];
+	return 1;
 }
